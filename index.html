@@ -6,27 +6,23 @@
     <title>BookRoom</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-
 <body>
 
     <div class="sidebar">
         <div class="sidebar-logo">
             <img src="asssets/logo/logo1.png" width="100" alt="Logo BookRoom"> 
         </div>
-
         <ul class="menu">
             <li onclick="showPage('dashboard')">Dashboard</li>
             <li onclick="showPage('pinjam')">Peminjaman</li>
             <li onclick="showPage('history')">Riwayat Peminjaman</li>
             <li onclick="showPage('about')">About</li>
         </ul>
-        
         <br>
-        <a href="./login.html" class="btn" style="text-align: center; display: block; margin: 0 20px;">Login</a>
+        <a href="login.html" class="btn" style="text-align: center; display: block; margin: 0 20px;">Login</a>
     </div>
 
     <div class="main">
-
         <div class="search-bar">
             <input type="text" id="searchDashboard" placeholder="Cari buku..." onkeyup="searchRekomendasi()">
             <span class="search-icon">🔍︎</span>
@@ -38,21 +34,18 @@
                 <p>Website ini membantu kamu meminjam dan mengelola buku perpustakaan dengan lebih mudah.</p>
                 <button class="btn" onclick="showPage('pinjam')">Mulai Meminjam</button>
             </div>
-
             <h2>Rekomendasi Buku</h2>
             <div class="book-grid" id="rekomendasi"></div>
         </div>
 
         <div id="pinjam" class="page">
             <h1>Peminjaman Buku</h1>
-
             <div id="form">
                 <input type="text" id="judul" placeholder="Judul Buku">
                 <input type="text" id="penulis" placeholder="Penulis">
                 <input type="text" id="jenis" placeholder="Jenis Buku">
                 <button class="btn" onclick="tambahBuku()">Tambah Buku</button>
             </div>
-
             <table style="margin-top:20px">
                 <thead>
                     <tr>
@@ -89,20 +82,17 @@
         <div id="about" class="page">
             <h1>Tentang BookRoom</h1>
             <p>Website perpustakaan digital sederhana untuk memudahkan peminjaman buku.</p>
-
             <div class="team-grid">
                 <div class="team-card">
                     <img src="asssets/img/eky.jpeg" alt="Foto Rezky">
                     <h3>Muhammad Rezky Arsy Ramadhan</h3>
                     <p>Backend Developer</p>
                 </div>
-
                 <div class="team-card">
                     <img src="asssets/img/kara.jpg" alt="Foto Carasia">
                     <h3>Ni Made Ayu Carasia Susanti</h3>
                     <p>UI/UX Designer</p>
                 </div>
-
                 <div class="team-card">
                     <img src="asssets/img/zaidan.jpeg" alt="Foto Zaidan">
                     <h3>Muhammad Zaidan Sidqi Nurmansyah</h3>
@@ -110,7 +100,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="JS/script.js"></script>
