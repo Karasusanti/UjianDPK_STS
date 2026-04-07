@@ -4,54 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Bookroom</title>
-    <style>
-    
-        body {
-            font-family: Arial, sans-serif;
-            background: #a67c52; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .login-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            width: 80%;
-            max-width: 300px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        h1 { color: #6b4f3b; }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 15px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box; 
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #6b4f3b;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #a67c52;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/login.css">
 </head>
 <body>
 
@@ -59,24 +12,12 @@
         <h1>Bookroom</h1>
         <p>Selamat Datang</p>
         
-        <input type="text" id="user" placeholder="Nama Anda...">
+        <input type="text" id="username" placeholder="Nama Anda..." onkeypress="handleEnter(event)">
         
         <button onclick="login()">MASUK</button>
     </div>
 
-    <script>
-        function login() {
-            let nama = document.getElementById("user").value;
-
-            if (nama === "") {
-                alert("Masukkan nama dulu ya!");
-            } else {
-                localStorage.setItem("namaPengguna", nama);
-                
-                window.location.href = "index.html";
-            }
-        }
-    </script>
+    <script src="JS/login.js"></script>
 
 </body>
 </html>
