@@ -1,9 +1,18 @@
 let user = localStorage.getItem("user")
 
 if(!user){
-window.location.href="login.html"
+    window.location.href="index.html"
 }
 
+function relogin(){
+    localStorage.removeItem("user");
+    localStorage.removeItem("alamat");
+    localStorage.removeItem("umur");
+
+    window.location.href = "index.html";
+}
+
+// data buku
 let buku = JSON.parse(localStorage.getItem("buku")) || [
 {judul:"Laskar Pelangi",penulis:"Andrea Hirata",jenis:"Novel",status:"Tersedia"},
 {judul:"Bumi",penulis:"Tere Liye",jenis:"Novel",status:"Tersedia"},
@@ -20,23 +29,15 @@ localStorage.setItem("history",JSON.stringify(history))
 }
 
 function showPage(id){
-
 localStorage.setItem("page",id)
 
 document.querySelectorAll(".page").forEach(p=>p.style.display="none")
-
 document.getElementById(id).style.display="block"
 
 render()
 }
 
-function toggleForm(){
-let f=document.getElementById("form")
-f.style.display=f.style.display=="block"?"none":"block"
-}
-
 function tambahBuku(){
-
 let judul=document.getElementById("judul").value
 let penulis=document.getElementById("penulis").value
 let jenis=document.getElementById("jenis").value
@@ -50,7 +51,6 @@ render()
 }
 
 function pinjam(i){
-
 if(buku[i].status=="Tersedia"){
 
 let nama=prompt("Nama Peminjam")
@@ -76,7 +76,6 @@ render()
 }
 
 function ubahStatus(i){
-
 history[i].status = history[i].status=="Dipinjam" ? "Dikembalikan" : "Dipinjam"
 
 simpanData()
@@ -84,7 +83,6 @@ render()
 }
 
 function hapusData(i){
-
 history.splice(i,1)
 
 simpanData()
@@ -96,7 +94,6 @@ function render(){
 let html=""
 
 for(let i=0;i<buku.length;i++){
-
 html+=`
 <tr>
 <td>${i+1}</td>
@@ -133,7 +130,6 @@ document.getElementById("rekomendasi").innerHTML=rekom
 let hist=""
 
 for(let i=0;i<history.length;i++){
-
 hist+=`
 <tr>
 <td>${i+1}</td>
@@ -151,7 +147,6 @@ hist+=`
 }
 
 document.getElementById("historyTable").innerHTML=hist
-
 }
 
 let savedPage = localStorage.getItem("page")
@@ -163,13 +158,11 @@ showPage("dashboard")
 }
 
 function searchRekomendasi(){
-
 let keyword = document.getElementById("searchDashboard").value.toLowerCase()
 
 let cards = document.querySelectorAll(".book")
 
 cards.forEach(card=>{
-
 let judul = card.querySelector("h3").innerText.toLowerCase()
 
 if(judul.includes(keyword)){
@@ -177,7 +170,5 @@ card.style.display="block"
 }else{
 card.style.display="none"
 }
-
 })
-
 }
