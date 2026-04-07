@@ -1,5 +1,8 @@
 function login() {
     let name = document.getElementById("username").value.trim();
+    let name = document.getElementById("alamat").value.trim();
+    let name = document.getElementById("umur").value.trim();
+
 
     if (name === "") {
         alert("Masukkan nama dulu");
@@ -8,7 +11,7 @@ function login() {
 
     localStorage.setItem("user", name);
 
-    window.location.href = "index.html";
+    window.location.href = "dashboard.html";
 }
 
 function handleEnter(e) {
