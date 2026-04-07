@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BookRoom</title>
+<link rel="stylesheet" href="CSS/style.css">
+
+
+</head>
+
+<body>
+
+<div class="sidebar">
+<div class="sidebar-logo">
+<img src="asssets/logo/logo1.png" width="100"> 
+</div>
+
+<ul class="menu">
+<li onclick="showPage('dashboard')">Dashboard</li>
+<li onclick="showPage('pinjam')">Peminjaman</li>
+<li onclick="showPage('history')">Data Buku</li>
+<li onclick="showPage('about')">About</li>
+</ul>
+</div>
+
+<div class="main">
+
+<div class="search-bar">
+<input type="text" id="searchDashboard" placeholder="Cari buku..." onkeyup="searchRekomendasi()">
+<span class="search-icon">🔍︎</span>
+</div>
+
+<div id="dashboard" class="page">
+
+
+<div class="welcome">
+<h2>Selamat Datang di BookRoom</h2>
+<p>Website ini membantu kamu meminjam dan mengelola buku perpustakaan dengan lebih mudah.</p>
+<button class="btn" onclick="showPage('pinjam')">Mulai Meminjam</button>
+</div>
+
+<h2>Rekomendasi Buku</h2>
+<div class="book-grid" id="rekomendasi"></div>
+
+</div>
+
+<div id="pinjam" class="page">
+
+<h1>Peminjaman Buku</h1>
+
+<div id="form" style="display:none">
+
+<input type="text" id="judul" placeholder="Judul Buku">
+<input type="text" id="penulis" placeholder="Penulis">
+<input type="text" id="jenis" placeholder="Jenis Buku">
+
+<button class="btn" onclick="tambahBuku()">Tambah Buku</button>
+
+</div>
+
+<table style="margin-top:20px">
+<thead>
+<tr>
+<th>No</th>
+<th>Judul</th>
+<th>Penulis</th>
+<th>Jenis Buku</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="tableBuku"></tbody>
+</table>
+
+</div>
+
+<div id="history" class="page">
+
+<h1>History Peminjaman</h1>
+
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Judul Buku</th>
+<th>Tanggal</th>
+<th>Nama Peminjam</th>
+<th>Jumlah</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="historyTable"></tbody>
+</table>
+
+</div>
+
+<div id="about" class="page">
+
+<h1>Tentang BookRoom</h1>
+
+<p>Website perpustakaan digital sederhana untuk memudahkan peminjaman buku.</p>
+
+<div class="team-grid">
+
+<div class="team-card">
+<img src="asssets/img/eky.jpeg">
+<h3>Muhammad Rezky Arsy Ramadhan</h3>
+<p>Backend Developer</p>
+</div>
+
+<div class="team-card">
+<img src="asssets/img/kara.jpg">
+<h3>Ni Made Ayu Carasia Susanti</h3>
+<p>UI/UX Designer</p>
+</div>
+
+<div class="team-card">
+<img src="asssets/img/zaidan.jpeg">
+<h3>Muhammad Zaidan Sidqi Nurmansyah</h3>
+<p>Frontend Developer</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="JS/script.js"></script>
+</body>
+</html>
