@@ -1,31 +1,18 @@
-window.onload=function(){
+function login() {
+    let name = document.getElementById("username").value.trim();
 
-let user = localStorage.getItem("user")
+    if (name === "") {
+        alert("Masukkan nama dulu");
+        return;
+    }
 
-if(!user){
-window.location.href="login.html"
+    localStorage.setItem("user", name);
+
+    window.location.href = "../index.html";
 }
 
-render()
-
-}
-
-function login(){
-
-let name=document.getElementById("username").value
-
-if(name==""){
-alert("Masukkan nama dulu")
-return
-}
-
-localStorage.setItem("user",name)
-
-window.location.href="index.html"
-
-}
-
-window.onload=function(){
-
-
+function handleEnter(e) {
+    if (e.key === "Enter") {
+        login();
+    }
 }
