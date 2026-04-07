@@ -12,7 +12,6 @@ function relogin(){
     window.location.href = "index.html";
 }
 
-// data buku
 let buku = JSON.parse(localStorage.getItem("buku")) || [
 {judul:"Laskar Pelangi",penulis:"Andrea Hirata",jenis:"Novel",status:"Tersedia"},
 {judul:"Bumi",penulis:"Tere Liye",jenis:"Novel",status:"Tersedia"},
@@ -149,26 +148,17 @@ hist+=`
 document.getElementById("historyTable").innerHTML=hist
 }
 
-let savedPage = localStorage.getItem("page")
-
-if(savedPage){
-showPage(savedPage)
-}else{
-showPage("dashboard")
-}
 
 function searchRekomendasi(){
 let keyword = document.getElementById("searchDashboard").value.toLowerCase()
 
-let cards = document.querySelectorAll(".book")
+let cards = document.querySelectorAll("#rekomendasi .book")
 
 cards.forEach(card=>{
-let judul = card.querySelector("h3").innerText.toLowerCase()
+let text = card.innerText.toLowerCase()
 
-if(judul.includes(keyword)){
-card.style.display="block"
-}else{
-card.style.display="none"
-}
+card.style.display = text.includes(keyword) ? "block" : "none"
 })
 }
+
+showPage(localStorage.getItem("page") || "dashboard");
