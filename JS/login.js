@@ -8,7 +8,7 @@ function login() {
 
     localStorage.setItem("user", name);
 
-    window.location.href = "../index.html";
+    window.location.href = "./index.html";
 }
 
 function handleEnter(e) {
